@@ -68,10 +68,10 @@ def dublicate_dataset_creator(list_of_datasets,save_result_to=False):
     dataset=pd.DataFrame(dataset_array,columns=['date','excel_source','pk_num','number_of_dublicates'])
 
     if not save_result_to:
-        if os.path.exists(r'C:\Users\MalininAYu\Desktop\dublicates_log_folder\pk_dublicates_log_file.csv'):
-            return dataset.to_csv(r'C:\Users\MalininAYu\Desktop\dublicates_log_folder\pk_dublicates_log_file.csv',index=False,mode='a',header=None)
+        if os.path.exists(some_route):
+            return dataset.to_csv(some_route,index=False,mode='a',header=None)
         else:
-            return dataset.to_csv(r'C:\Users\MalininAYu\Desktop\dublicates_log_folder\pk_dublicates_log_file.csv',
+            return dataset.to_csv(some_route,
                                   index=False, mode='a')
     else:
         if os.path.exists(save_result_to):
@@ -89,7 +89,7 @@ def func_manager(save_result_to=False):
 
     return result
 
-func_manager(r'W:\Сибур\ФЦТ\04 Направления\02 Работа с данными\DataExchange\Logistic_UCP\LogisticsMetrics\prod\auto_metrics\data\dublicates_log_folder\pk_dublicates_log_file.csv')
+func_manager(some_route)
 
 
 

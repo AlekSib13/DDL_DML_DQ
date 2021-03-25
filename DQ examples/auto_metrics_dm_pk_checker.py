@@ -191,13 +191,13 @@ def dataframe_creator(data_dict,type_of_connection):
 
 
 def dataframe_writer(dataframe):
-    if not os.path.exists(r'W:\Сибур\ФЦТ\04 Направления\02 Работа с данными\DataExchange\Logistic_UCP\LogisticsMetrics\DQ_checks'):
-        os.mkdir(r'W:\Сибур\ФЦТ\04 Направления\02 Работа с данными\DataExchange\Logistic_UCP\LogisticsMetrics\DQ_checks')
+    if not os.path.exists(some_route):
+        os.mkdir(some_route)
 
-    if not os.path.exists(r'W:\Сибур\ФЦТ\04 Направления\02 Работа с данными\DataExchange\Logistic_UCP\LogisticsMetrics\DQ_checks\dublicate_check.csv'):
-        written_dataframe=dataframe.to_csv(r'W:\Сибур\ФЦТ\04 Направления\02 Работа с данными\DataExchange\Logistic_UCP\LogisticsMetrics\DQ_checks\dublicate_check.csv',index=False,mode='a')
+    if not os.path.exists(some_route):
+        written_dataframe=dataframe.to_csv(some_route,index=False,mode='a')
     else:
-        written_dataframe = dataframe.to_csv(r'W:\Сибур\ФЦТ\04 Направления\02 Работа с данными\DataExchange\Logistic_UCP\LogisticsMetrics\DQ_checks\dublicate_check.csv',
+        written_dataframe = dataframe.to_csv(some_route,
                                              index=False, mode='a', header=None)
 
     return written_dataframe
